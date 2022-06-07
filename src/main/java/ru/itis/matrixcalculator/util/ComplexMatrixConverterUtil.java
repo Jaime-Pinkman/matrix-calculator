@@ -37,8 +37,8 @@ public final class ComplexMatrixConverterUtil {
     }
 
     public static ComplexWrappedMatrix toWrappedMatrix(ZMatrixRMaj matrix){
-        double[][] real = new double[matrix.getNumCols()][matrix.getNumRows()];
-        double[][] imaginary = new double[matrix.getNumCols()][matrix.getNumRows()];
+        double[][] real = new double[matrix.getNumRows()][matrix.getNumCols()];
+        double[][] imaginary = new double[matrix.getNumRows()][matrix.getNumCols()];
         for (int i = 0; i < real.length; i++) {
             for (int j = 0; j < real[i].length; j++) {
                 real[i][j] = matrix.getReal(i, j);

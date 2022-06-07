@@ -23,7 +23,7 @@ public final class RealMatrixConverterUtil {
     }
 
     public static WrappedMatrix toWrappedMatrix(DMatrixRMaj matrix){
-        double[][] target = new double[matrix.getNumCols()][matrix.getNumRows()];
+        double[][] target = new double[matrix.getNumRows()][matrix.getNumCols()];
         double[] data = matrix.getData();
         int index = 0;
         for (int i = 0; i < target.length; i++) {
