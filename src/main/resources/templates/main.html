@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body style="background-image: url('/background.jpg');" onload="onStartup()">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12" id="alert">
+
+        </div>
+    </div>
+    <div class="row" style="padding-top: 1%">
+        <div class="col-12 text-center d-grid gap-2">
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="radio" class="btn-check" name="btnradiotype" id="realnumbersbtn" autocomplete="off" checked onclick="setType('real')">
+                <label class="btn btn-outline-primary" for="realnumbersbtn">Real Numbers</label>
+
+                <input type="radio" class="btn-check" name="btnradiotype" id="complexnumberbtn" autocomplete="off" onclick="setType('complex')">
+                <label class="btn btn-outline-primary" for="complexnumberbtn">Complex Numbers</label>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 1%">
+        <div class="col-12 text-center d-grid gap-2 ">
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="plus" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="plus" onclick="setOperator('plus')">Plus</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="minus" autocomplete="off">
+                <label class="btn btn-outline-primary" for="minus" onclick="setOperator('minus')">Minus</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="mult" autocomplete="off">
+                <label class="btn btn-outline-primary" for="mult" onclick="setOperator('mult')">Multiply</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="divide" autocomplete="off">
+                <label class="btn btn-outline-primary" for="divide" onclick="setOperator('divide')">Divide</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="scale" autocomplete="off">
+                <label class="btn btn-outline-primary" for="scale" onclick="setOperator('scale')">Scale</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="inverse" autocomplete="off">
+                <label class="btn btn-outline-primary" for="inverse" onclick="setOperator('inverse')">Inverse</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="transpose" autocomplete="off">
+                <label class="btn btn-outline-primary" for="transpose" onclick="setOperator('transpose')">Transpose</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="determinant" autocomplete="off">
+                <label class="btn btn-outline-primary" for="determinant" onclick="setOperator('determinant')">Determinant</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="rank" autocomplete="off">
+                <label class="btn btn-outline-primary" for="rank" onclick="setOperator('rank')">Rank</label>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 1%">
+        <div class="col-3">
+            <div class="row" style="padding-top: 0.5%">
+                <div class="col-5 text-center">
+                    <div class="mb-3">
+                        <label for="target-matrix-cols" class="form-label">Cols</label>
+                        <input type="text" class="form-control" id="target-matrix-cols" value="3">
+                    </div>
+                </div>
+                <div class="col-2 text-center justify-content-center align-self-center">
+                    <span>╳</span>
+                </div>
+                <div class="col-5 text-center">
+                    <div class="mb-3">
+                        <label for="target-matrix-rows" class="form-label">Rows</label>
+                        <input type="text" class="form-control" id="target-matrix-rows" value="3">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 0.5%">
+                <table id="target-matrix-table">
+                    <tbody id="target-matrix-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-1 text-center justify-content-center align-self-center">
+            <span id="operator">+</span>
+        </div>
+        <div class="col-3" id="second">
+
+        </div>
+        <div class="col-1 text-center justify-content-center align-self-center">
+            <span>=</span>
+        </div>
+        <div class="col-4 text-center justify-content-center align-self-center" id ="result">
+        </div>
+    </div>
+    <div class="row" style="padding-top: 1%">
+        <div class="col-12 text-center">
+            <button type="button" class="btn btn-outline-primary" onclick="calculate()">Calculate</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/main.js"></script>
+</html>
